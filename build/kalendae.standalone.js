@@ -784,12 +784,6 @@ var util = Kalendae.util = {
 		return !!( (/msie 8./i).test(navigator.appVersion) && !(/opera/i).test(navigator.userAgent) && window.ActiveXObject && XDomainRequest && !window.msPerformance );
 	},
 
-	isTouchDevice: function () {
-		return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-		//navigator.maxTouchPoints for microsoft IE11
-		//navigator.msMaxTouchPoints for microsoft IE backwards compatibility
-	},
-
 // ELEMENT FUNCTIONS
 
 	$: function (elem) {
@@ -852,13 +846,8 @@ var util = Kalendae.util = {
 		};
 		if (elem.attachEvent) { // IE only.  The "on" is mandatory.
 			elem.attachEvent("on" + eventName, listener);
-		} else { // Other browsers.
-			if(eventName === 'mousedown' && util.isTouchDevice()) {
-				//works on touch devices
-				elem.addEventListener('touchstart', listener, false);
-			} else {
-				elem.addEventListener(eventName, listener, false);
-			}
+		} else {
+			elem.addEventListener(eventName, listener, false);
 		}
 		return listener;
 	},
@@ -912,7 +901,7 @@ var util = Kalendae.util = {
 		do {
 			var overflow = util.getStyle(elem, 'overflow');
 			// overflow will be either straight up "auto" or it can be "hidden auto" if styles like overflow-x are used
-			if (overflow.indexOf('auto') !== -1 || overflow.indexOf('scroll') !== -1) return elem;
+			if (overflow.indexOf('auto') !== -1 || overflow.indexOf('scroll') !== -1 || elem.scrollLeft > 0 || elem.scrollLeft < 0 || elem.scrollTop > 0) return elem;
 		} while ((elem = elem.parentNode) && elem != window.document.body);
 		return null;
 	},

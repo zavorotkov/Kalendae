@@ -1,11 +1,11 @@
 {
   "name": "kalendae",
-  "version": "1.0.2",
-  "description": "A framework agnostic javascript date picker.",
+  "version": "1.0.3",
+  "description": "A fork from Twipped/Kalendae that fixes some issues",
   "main": "build/kalendae.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Twipped/Kalendae.git"
+    "url": "https://github.com/zavorotkov/Kalendae.git"
   },
   "keywords": [
     "date",
@@ -14,15 +14,11 @@
     "moment",
     "frontend"
   ],
-  "author": "Jocelyn Badgley <joc@twipped.com>",
-  "contributors": [
-    "Geremia Taglialatela (http://github.com/tagliala)",
-    "Alexey Osipenko <alexey@osipenko.in.ua> (https://github.com/pfiller)",
-    "Patrick Filler (https://github.com/pfiller)"
-  ],
+  "author": "Aleksey Zavorotkov <aleksey.zavorotkov@gmail.com>",
+  "contributors": [],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Twipped/Kalendae/issues"
+    "url": "https://github.com/zavorotkov/Kalendae/issues"
   },
   "files": [
     "build",
@@ -31,7 +27,7 @@
     "LICENSE",
     "readme.md"
   ],
-  "homepage": "https://github.com/Twipped/Kalendae",
+  "homepage": "https://github.com/zavorotkov/Kalendae",
   "devDependencies": {
     "uglify-js": "~3.7.4"
   },

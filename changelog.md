@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+* Remove custom touch devices click handler to fix mouse click on touch devices
+
 ## 1.0.2
 
 * Fix for auto-initialization of inputs on IE10
